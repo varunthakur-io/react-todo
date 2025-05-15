@@ -1,8 +1,8 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 
 // index.js peoviders
-import { TodoProvider } from './context/TodoContext';
-import { TodoForm, TodoItem } from './components/';
+import { TodoProvider } from "./context/TodoContext";
+import { TodoForm, TodoItem } from "./components/";
 
 function App() {
   const [todos, setTodos] = useState([]);
@@ -13,7 +13,7 @@ function App() {
 
   const updateTodo = (id, updatedTodo) => {
     setTodos((prev) =>
-      prev.map((todo) => (todo.id === id ? { ...todo, ...updatedTodo } : todo)),
+      prev.map((todo) => (todo.id === id ? { ...todo, ...updatedTodo } : todo))
     );
   };
 
@@ -22,17 +22,17 @@ function App() {
   };
 
   const toggleComplete = (id) => {
-    console.log('toggle complete');
+    console.log("toggle complete");
     setTodos((prev) =>
       prev.map((todo) =>
-        todo.id === id ? { ...todo, completed: !todo.completed } : todo,
-      ),
+        todo.id === id ? { ...todo, completed: !todo.completed } : todo
+      )
     );
   };
 
   // to set todo data from local storage
   useEffect(() => {
-    const todos = JSON.parse(localStorage.getItem('todos'));
+    const todos = JSON.parse(localStorage.getItem("todos"));
 
     if (todos && todos.length > 0) {
       setTodos(todos);
@@ -40,7 +40,7 @@ function App() {
   }, []);
 
   useEffect(() => {
-    localStorage.setItem('todos', JSON.stringify(todos));
+    localStorage.setItem("todos", JSON.stringify(todos));
   }, [todos]);
 
   return (
@@ -59,18 +59,14 @@ function App() {
             Manage Your Todos
           </h1>
           <div className="mb-4">
-
             <TodoForm />
-
           </div>
           <div className="flex flex-wrap gap-y-3">
-
             {todos.map((todo) => (
               <div key={todo.id} className="w-full">
                 <TodoItem todo={todo} />
               </div>
             ))}
-
           </div>
         </div>
       </div>

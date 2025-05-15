@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import { useTodo } from '../context';
+import { useState } from "react";
+import { useTodo } from "../context";
 
 // TodoForm component
 function TodoForm() {
-  const [todo, setTodo] = useState('');
+  const [todo, setTodo] = useState("");
   const { addTodo } = useTodo();
 
   // Function to add a new todo
@@ -11,7 +11,7 @@ function TodoForm() {
     e.preventDefault();
     if (!todo) return;
     addTodo({ todo, completed: false });
-    setTodo('');
+    setTodo("");
   };
 
   return (
