@@ -44,8 +44,7 @@ Contributions to the project are welcome! If you encounter any bugs or have sugg
 This project is licensed under the MIT License. See the LICENSE file for more details.
 
 ## Credits
-- Developed by [Your Name]
-- Special thanks to [Any contributors or resources you want to acknowledge]
+- Developed by Varun Thakur
 
 ## Additional Resources
 - [React Documentation](https://reactjs.org/docs/getting-started.html)
